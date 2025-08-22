@@ -9,7 +9,10 @@
 
 TrustScore provides a tailored experience for three distinct user roles:
 
-Features according to the actors
+
+
+Roles & Features
+
 
 👤 Normal User
 	
