@@ -50,7 +50,7 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-module.exports = router;
+
 
 // @route   POST api/users/login
 // @desc    Authenticate user & get token
@@ -115,3 +115,37 @@ router.get('/me', authMiddleware, async (req, res) => {
         res.status(500).send('Server Error');
     }
 });
+
+// @route   PUT api/users/password
+// @desc    Update user's password
+// @access  Private
+router.put('/password', authMiddleware, async (req, res) => {
+  const { currentPassword, newPassword } = req.body;
+  const userId = req.user.id;
+
+  try {
+    // Get user's current password from DB
+    const [users] = await db.query('SELECT password FROM users WHERE id = ?', [userId]);
+    const user = users[0];
+
+    // Verify current password
+    const isMatch = await bcrypt.compare(currentPassword, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ msg: 'Invalid current password.' });
+    }
+
+    // Hash the new password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    // Update the password in the database
+    await db.query('UPDATE users SET password = ? WHERE id = ?', [hashedPassword, userId]);
+
+    res.json({ msg: 'Password updated successfully.' });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+module.exports = router;

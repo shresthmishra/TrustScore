@@ -12,7 +12,8 @@ import AdminStoreManagementPage from './pages/AdminStoreManagementPage';
 import StoreOwnerDashboardPage from './pages/StoreOwnerDashboardPage';
 import AdminRoute from './components/AdminRoute';
 import StoreOwnerRoute from './components/StoreOwnerRoute';
-import { AppBar, Toolbar, Typography, Button, Box, Container } from '@mui/material'; // Import MUI components
+import UpdatePasswordPage from './pages/UpdatePasswordPage'; // Import the new page
+import { AppBar, Toolbar, Typography, Button, Box, Container } from '@mui/material';
 import './App.css';
 
 const AppContent = () => {
@@ -32,6 +33,8 @@ const AppContent = () => {
           {isAuthenticated ? (
             <>
               <Button color="inherit" component={Link} to="/dashboard">Dashboard</Button>
+              {/* Add the "Update Password" link for logged-in users */}
+              <Button color="inherit" component={Link} to="/update-password">Update Password</Button>
               {user && user.role === 'System Administrator' && (
                 <Button color="inherit" component={Link} to="/admin">Admin</Button>
               )}
@@ -53,14 +56,19 @@ const AppContent = () => {
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          {/* Protected routes for any logged-in user */}
           <Route element={<PrivateRoute />}>
             <Route path="/dashboard" element={<DashboardPage />} />
+            {/* Add the route for the update password page */}
+            <Route path="/update-password" element={<UpdatePasswordPage />} />
           </Route>
+          {/* Protected routes for Admin */}
           <Route element={<AdminRoute />}>
             <Route path="/admin" element={<AdminDashboardPage />} />
             <Route path="/admin/users" element={<AdminUserManagementPage />} />
             <Route path="/admin/stores" element={<AdminStoreManagementPage />} />
           </Route>
+          {/* Protected routes for Store Owner */}
           <Route element={<StoreOwnerRoute />}>
             <Route path="/my-store" element={<StoreOwnerDashboardPage />} />
           </Route>
