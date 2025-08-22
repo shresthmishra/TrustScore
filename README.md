@@ -1,6 +1,6 @@
 <div align="center">
 <br />
-<h1>TrustScore 🌟</h1>
+<h1>TrustScore</h1>
 <strong>A full-stack store rating and review platform with role-based access control.</strong>
 <br />
 <br />
