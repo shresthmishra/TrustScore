@@ -46,4 +46,30 @@ const StoreItem = ({ store }) => {
   );
 };
 
+return (
+    <Card sx={{ minWidth: 275, mb: 2 }}>
+      <CardContent>
+        <Typography variant="h5" component="div">{store.name}</Typography>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">{store.address}</Typography>
+        <Typography variant="body2">
+          Average Rating: {Number(store.average_rating).toFixed(1)}
+        </Typography>
+        {/* Add this line to show the user's rating if it exists */}
+        {store.user_submitted_rating && (
+          <Typography variant="body2" color="primary">
+            Your Rating: {store.user_submitted_rating}
+          </Typography>
+        )}
+        <Box component="form" onSubmit={handleRatingSubmit} sx={{ mt: 2, ... }}>
+          {/* ... form content ... */}
+          {/* Conditionally change the button text */}
+          <Button type="submit" variant="contained" size="medium">
+            {store.user_submitted_rating ? 'Update Rating' : 'Rate'}
+          </Button>
+        </Box>
+      </CardContent>
+    </Card>
+  );
+};
+
 export default StoreItem;
