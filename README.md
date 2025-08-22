@@ -5,13 +5,10 @@
 <br />
 <br />
 </div>
+
 🚀 Key Features
 
 TrustScore provides a tailored experience for three distinct user roles:
-
-<br />
-Roles & Features
-<br />
 
 👤 Normal User
 	
