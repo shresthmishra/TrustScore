@@ -1,37 +1,45 @@
-<div align="center">
-<br />
-<h1>TrustScore</h1>
-<strong>A full-stack store rating and review platform with role-based access control.</strong>
-<br />
-<br />
-</div>
+# TrustScore 
 
-🚀 Key Features
+A full-stack store rating and review platform with role-based access control.
+
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![MUI](https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)
+
+---
+
+## Key Features
 
 TrustScore provides a tailored experience for three distinct user roles:
 
-👤 Normal User
-	
+### Normal User
+- Sign up, log in, and update password securely.
+- View and search a comprehensive list of all stores.
+- Submit and modify personal ratings (1-5 stars).
+- View both personal ratings and the average rating for each store.
 
-<ul><li>Sign up, log in, and update password</li><li>View and search all stores</li><li>Submit and modify ratings (1-5)</li><li>See personal and average store ratings</li></ul>
+### Store Owner
+- Securely log in and manage account credentials.
+- Access a dedicated dashboard displaying the store's average rating.
+- View a list of all users who have rated their store.
 
-🏪 Store Owner
-	
+### System Admin
+- View a site-wide statistics dashboard with key metrics.
+- Full management control over all users (create, view, filter).
+- Full management control over all stores (create, view, filter).
 
-<ul><li>Log in and update password</li><li>View a dashboard with their store's average rating</li><li>See a list of users who have rated their store</li></ul>
+---
 
-⚙️ System Admin
-	
+## 🛠️ Tech Stack
 
-<ul><li>View a site-wide statistics dashboard</li><li>Manage all users (create, view, filter)</li><li>Manage all stores (create, view, filter)</li></ul>
-🛠️ Tech Stack
+* **Frontend:** React.js, React Router, Material-UI (MUI)
+* **Backend:** Node.js, Express.js
+* **Database:** MySQL
+* **Authentication:** JSON Web Tokens (JWT), bcryptjs
+* **Validation:** express-validator
 
-    Frontend: React.js, React Router, Material-UI (MUI)
+---
 
-    Backend: Node.js, Express.js
-
-    Database: MySQL
-
-    Authentication: JSON Web Tokens (JWT), bcryptjs
-
-    Validation: express-validator
+<i>Have a good one!</i>
