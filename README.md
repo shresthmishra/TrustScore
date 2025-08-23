@@ -32,7 +32,7 @@ TrustScore provides a tailored experience for three distinct user roles:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Frontend:** React.js, React Router, Material-UI (MUI)
 * **Backend:** Node.js, Express.js
@@ -42,4 +42,4 @@ TrustScore provides a tailored experience for three distinct user roles:
 
 ---
 
-<i>Have a good one!</i>
+<i>Thanks for reading, have a good one!</i>
