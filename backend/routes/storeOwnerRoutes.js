@@ -15,7 +15,7 @@ router.get('/dashboard', async (req, res) => {
     // Find the store owned by the logged-in user
     const [stores] = await db.query('SELECT id FROM stores WHERE owner_id = ?', [req.user.id]);
     if (stores.length === 0) {
-      return res.status(404).json({ msg: 'No store associated with this owner.' });
+      return res.status(404).json({ msg: 'No store associated with this owner. Try another?' });
     }
     const storeId = stores[0].id;
 
