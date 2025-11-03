@@ -66,7 +66,7 @@ router.post('/users', async (req, res) => {
     console.error(err.message);
     // Send a more specific error if the email is a duplicate
     if (err.code === 'ER_DUP_ENTRY') {
-      return res.status(400).json({ msg: 'An account with this email already exists.' });
+      return res.status(400).json({ msg: 'An account with this email already exists. Try another one.' });
     }
     res.status(500).send('Server Error');
   }
