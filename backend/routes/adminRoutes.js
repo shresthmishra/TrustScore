@@ -61,7 +61,7 @@ router.post('/users', async (req, res) => {
     };
 
     const [result] = await db.query('INSERT INTO users SET ?', newUser);
-    res.status(201).json({ msg: 'User created successfully', userId: result.insertId });
+    res.status(201).json({ msg: 'User created successfully!', userId: result.insertId });
   } catch (err) {
     console.error(err.message);
     // Send a more specific error if the email is a duplicate
